@@ -129,8 +129,15 @@ const Home: React.FC = () => {
 
             <section id="contact" className="section contact">
                 <h2 className="section-title">Contact</h2>
-                <p>If you'd like to get in touch about opportunities or collaborations, please reach out.</p>
-                <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+                <p>Let's build something amazing together. Reach out for opportunities, collaborations, or just to connect!</p>
+                <p>
+                    📧 Email: <a href="mailto:sakthikgm2211@gmail.com">sakthikgm2211@gmail.com</a>
+                </p>
+                <p>
+                    💼 LinkedIn: <a href="https://in.linkedin.com/in/sakthivel-palanisamy-382a64176" target="_blank" rel="noreferrer">
+                        linkedin.com/in/sakthivel-palanisamy-382a64176
+                    </a>
+                </p>
             </section>
         </main>
     );

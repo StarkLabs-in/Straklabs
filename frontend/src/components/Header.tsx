@@ -18,7 +18,7 @@ const Header: React.FC = () => {
                     <a className="icon-btn" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub">
                         <FaGithub />
                     </a>
-                    <a className="icon-btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                    <a className="icon-btn" href="https://in.linkedin.com/in/sakthivel-palanisamy-382a64176" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                         <FaLinkedin />
                     </a>
                     <a className="icon-btn" href="/resume.pdf" target="_blank" rel="noreferrer" aria-label="Resume">
