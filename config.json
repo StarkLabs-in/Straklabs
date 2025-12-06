@@ -1,0 +1,20 @@
+{
+  "backend": {
+    "port": 3001,
+    "apiBaseUrl": "http://localhost:3001/api",
+    "database": {
+      "url": "mongodb://localhost:27017/portfolio",
+      "options": {
+        "useNewUrlParser": true,
+        "useUnifiedTopology": true
+      }
+    }
+  },
+  "frontend": {
+    "port": 3000,
+    "apiBaseUrl": "http://localhost:3001/api"
+  },
+  "environment": {
+    "nodeEnv": "development"
+  }
+}

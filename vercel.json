@@ -1,0 +1,20 @@
+{
+  "buildCommand": "npm run build --prefix frontend",
+  "outputDirectory": "frontend/build",
+  "framework": "react",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "http://localhost:5000/api/:path*"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "regions": ["iad1"],
+  "git": {
+    "deploymentEnabled": {
+      "main": true
+    }
+  }
+}

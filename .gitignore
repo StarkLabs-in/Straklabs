@@ -1,0 +1,33 @@
+# Environment variables - NEVER commit secrets
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+*.lock
+*.log
+
+# Build outputs
+build/
+dist/
+*.tsbuildinfo
+
+# IDE & OS
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+
+# Source maps in production (should not be committed)
+*.map
+
+# Temporary files
+tmp/
+temp/

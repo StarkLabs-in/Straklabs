@@ -1,0 +1,714 @@
+/* Iron Man Stark Industries Theme */
+:root {
+    --bg: #0a0e27;
+    --card: #141d2f;
+    --muted: #b0b8c1;
+    --accent: #ff6b1a;
+    --accent-light: #ffb81c;
+    --red: #c41e3a;
+    --glass: rgba(255, 107, 26, 0.08);
+    --glow: 0 0 30px rgba(255, 107, 26, 0.4);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1425 100%);
+    color: #e6eef8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* ============== HEADER ============== */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(90deg, rgba(10, 14, 39, 0.8), rgba(20, 29, 47, 0.6));
+    border-bottom: 2px solid rgba(255, 107, 26, 0.3);
+    box-shadow: 0 8px 32px rgba(255, 107, 26, 0.15);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 20px;
+}
+
+.brand a {
+    font-weight: 800;
+    color: var(--accent);
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px rgba(255, 107, 26, 0.6);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.brand a:hover {
+    text-shadow: 0 0 40px rgba(255, 107, 26, 0.8);
+    color: var(--accent-light);
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--accent);
+}
+
+.nav a::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    box-shadow: var(--glow);
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::before {
+    width: 100%;
+}
+
+.socials {
+    display: flex;
+    gap: 15px;
+}
+
+.icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 107, 26, 0.1);
+    color: var(--accent);
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 107, 26, 0.3);
+    cursor: pointer;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.icon-btn:hover {
+    background: rgba(255, 107, 26, 0.2);
+    box-shadow: var(--glow);
+    transform: scale(1.1);
+}
+
+/* ============== HERO SECTION ============== */
+.hero {
+    padding: 80px 40px;
+    border-radius: 20px;
+    background: radial-gradient(circle at 60% 40%, rgba(255, 107, 26, 0.08), transparent),
+                linear-gradient(135deg, rgba(196, 30, 58, 0.05) 0%, rgba(255, 107, 26, 0.02) 100%);
+    margin-bottom: 60px;
+    border: 2px solid rgba(255, 107, 26, 0.2);
+    box-shadow: 0 20px 60px rgba(255, 107, 26, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hero.in-view {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.hero-inner h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ff6b1a, #ffb81c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(255, 107, 26, 0.4);
+    letter-spacing: -1px;
+}
+
+.lead {
+    color: var(--muted);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.meta-row {
+    color: var(--accent);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.meta-row .sep {
+    margin: 0 10px;
+    opacity: 0.5;
+}
+
+/* ============== SECTIONS ============== */
+.section {
+    padding: 60px 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    box-shadow: var(--glow);
+}
+
+/* ============== EXPERIENCE ============== */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.exp-entry {
+    background: linear-gradient(135deg, rgba(20, 29, 47, 0.8), rgba(10, 14, 39, 0.6));
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 107, 26, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(255, 107, 26, 0.1);
+    transform: translateY(40px);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.exp-entry::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    transition: left 0.6s ease;
+}
+
+.exp-entry:hover::before {
+    left: 100%;
+}
+
+.exp-entry.in-view {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.exp-entry:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4),
+                0 0 40px rgba(255, 107, 26, 0.25);
+    border-color: rgba(255, 107, 26, 0.5);
+}
+
+.exp-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.exp-header h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.meta {
+    color: var(--accent-light);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: right;
+}
+
+.exp-entry ul {
+    margin: 15px 0 0 20px;
+    color: var(--muted);
+    line-height: 1.8;
+    list-style: none;
+}
+
+.exp-entry ul li {
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 8px;
+}
+
+.exp-entry ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* ============== SKILLS ============== */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.skill-badge {
+    background: rgba(255, 107, 26, 0.08);
+    padding: 12px 20px;
+    border-radius: 30px;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: 2px solid rgba(255, 107, 26, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.skill-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 107, 26, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.skill-badge:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 107, 26, 0.15);
+    box-shadow: 0 10px 30px rgba(255, 107, 26, 0.3), var(--glow);
+    border-color: rgba(255, 107, 26, 0.6);
+    color: var(--accent-light);
+}
+
+.skill-badge:hover::before {
+    left: 100%;
+}
+
+.skill-badge .copied {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 107, 26, 0.2);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    color: var(--accent-light);
+    border: 1px solid rgba(255, 107, 26, 0.4);
+}
+
+/* ============== CONTACT ============== */
+.contact p {
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.contact a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid rgba(255, 107, 26, 0.3);
+}
+
+.contact a:hover {
+    color: var(--accent-light);
+    box-shadow: 0 0 20px rgba(255, 107, 26, 0.4);
+    border-bottom-color: var(--accent-light);
+}
+
+/* ============== LOADER ============== */
+.loader-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(10, 14, 39, 0.95), rgba(0, 0, 0, 0.85));
+    z-index: 9999;
+    backdrop-filter: blur(5px);
+}
+
+.loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Arc Reactor SVG Container */
+.arc-reactor {
+    width: 160px;
+    height: 160px;
+    position: relative;
+}
+
+.arc-reactor svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 25px rgba(255, 107, 26, 0.9)) drop-shadow(0 0 50px rgba(0, 212, 255, 0.4));
+}
+
+/* Arc Reactor Charging Animations */
+
+/* Charge ring animation - simulates power flowing in from outer ring */
+@keyframes charge-ring {
+    0% {
+        stroke-dashoffset: 150;
+        opacity: 0.3;
+        stroke: #ff6b1a;
+    }
+    50% {
+        opacity: 1;
+        stroke: #ffb81c;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+        stroke: #ff6b1a;
+    }
+}
+
+/* Core plasma pulsing - central fusion reaction */
+@keyframes core-plasma-pulse {
+    0% {
+        r: 8px;
+        fill-opacity: 0.4;
+        fill: #1e90ff;
+    }
+    50% {
+        r: 12px;
+        fill-opacity: 0.8;
+        fill: #00d4ff;
+    }
+    100% {
+        r: 10px;
+        fill-opacity: 0.6;
+        fill: #1e90ff;
+    }
+}
+
+/* Core pulse - innermost point glow */
+@keyframes core-pulse {
+    0% {
+        r: 5px;
+        fill-opacity: 0.5;
+    }
+    50% {
+        r: 8px;
+        fill-opacity: 1;
+    }
+    100% {
+        r: 6px;
+        fill-opacity: 0.8;
+    }
+}
+
+/* Core glow ring animation */
+@keyframes core-glow {
+    0% {
+        opacity: 0.5;
+        stroke-width: 1.5;
+    }
+    50% {
+        opacity: 1;
+        stroke-width: 2;
+    }
+    100% {
+        opacity: 0.7;
+        stroke-width: 1.5;
+    }
+}
+
+/* Overall arc reactor glow effect */
+@keyframes reactor-glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 15px rgba(255, 107, 26, 0.6)) drop-shadow(0 0 30px rgba(0, 212, 255, 0.2));
+    }
+    50% {
+        filter: drop-shadow(0 0 30px rgba(255, 107, 26, 0.9)) drop-shadow(0 0 60px rgba(0, 212, 255, 0.5));
+    }
+}
+
+/* Coil housing animation - triangular elements glow */
+@keyframes coil-glow {
+    0% {
+        stroke-width: 1.5;
+        opacity: 0.5;
+    }
+    50% {
+        stroke-width: 2;
+        opacity: 0.9;
+    }
+    100% {
+        stroke-width: 1.5;
+        opacity: 0.6;
+    }
+}
+
+/* Circuit network - blue glow pulsing */
+@keyframes circuit-pulse {
+    0% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}
+
+/* Electromagnetic field ripple */
+@keyframes em-ripple {
+    0% {
+        stroke-width: 0.5;
+        opacity: 0.2;
+    }
+    50% {
+        stroke-width: 1;
+        opacity: 0.6;
+    }
+    100% {
+        stroke-width: 0.5;
+        opacity: 0.2;
+    }
+}
+
+/* Apply animations to elements */
+.charge-ring {
+    animation: charge-ring 2.5s ease-in-out infinite;
+}
+
+.core-plasma {
+    animation: core-plasma-pulse 1.8s ease-in-out infinite;
+}
+
+.core-pulse {
+    animation: core-pulse 1.5s ease-in-out infinite;
+}
+
+.core-glow {
+    animation: core-glow 1.6s ease-in-out infinite;
+}
+
+.arc-reactor {
+    animation: reactor-glow 1.2s ease-in-out infinite;
+}
+
+.coil-housing {
+    animation: coil-glow 2s ease-in-out infinite;
+}
+
+.circuit-network {
+    animation: circuit-pulse 2.2s ease-in-out infinite;
+}
+
+.em-field {
+    animation: em-ripple 2.4s ease-in-out infinite;
+}
+
+/* Particles */
+.particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent);
+}
+
+@keyframes float-up {
+    0% {
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px) translateX(var(--tx));
+    }
+}
+
+.loader-text {
+    color: var(--accent);
+    font-weight: 800;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* ============== APP STATE ============== */
+.app-root {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.app-root.is-ready {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============== ANIMATIONS ============== */
+@keyframes floaty {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Staggered reveal for experience entries */
+.experience-grid .exp-entry:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.experience-grid .exp-entry:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.experience-grid .exp-entry:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.experience-grid .exp-entry:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* ============== RESPONSIVE ============== */
+@media (max-width: 768px) {
+    .hero-inner h1 {
+        font-size: 2rem;
+    }
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    .header-inner {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .nav {
+        gap: 15px;
+        font-size: 0.9rem;
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        gap: 10px;
+    }
+
+    .skill-badge {
+        padding: 10px 15px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 10px;
+    }
+
+    .hero-inner h1 {
+        font-size: 1.5rem;
+    }
+
+    .nav {
+        gap: 10px;
+        font-size: 0.8rem;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+}
+
