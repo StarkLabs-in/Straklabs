@@ -1,5 +1,55 @@
 import React from 'react';
 import useInView from '../hooks/useInView';
+import {
+    FaNodeJs, FaReact, FaAngular, FaDocker, FaAws, FaPython,
+    FaLinux, FaGitAlt, FaDatabase, FaShieldAlt, FaTerminal,
+    FaNetworkWired, FaCode, FaRobot
+} from 'react-icons/fa';
+import {
+    SiFastapi, SiKubernetes, SiGithubactions, SiMicrosoftazure,
+    SiSelenium, SiPlaywright, SiPytest, SiApachejmeter, SiOwasp,
+    SiCmake, SiMysql, SiMongodb, SiTypescript, SiCplusplus,
+    SiGo, SiPytorch, SiTensorflow, SiElasticsearch,
+    SiGnubash
+} from 'react-icons/si';
+
+// Icon mapping helper
+const getSkillIcon = (skill: string) => {
+    const lower = skill.toLowerCase();
+    if (lower.includes('node')) return <FaNodeJs />;
+    if (lower.includes('react')) return <FaReact />;
+    if (lower.includes('angular')) return <FaAngular />;
+    if (lower.includes('fastapi')) return <SiFastapi />;
+    if (lower.includes('docker')) return <FaDocker />;
+    if (lower.includes('kubernetes')) return <SiKubernetes />;
+    if (lower.includes('github actions')) return <SiGithubactions />;
+    if (lower.includes('azure')) return <SiMicrosoftazure />;
+    if (lower.includes('aws')) return <FaAws />;
+    if (lower.includes('selenium')) return <SiSelenium />;
+    if (lower.includes('playwright')) return <SiPlaywright />;
+    if (lower.includes('pytest')) return <SiPytest />;
+    if (lower.includes('jmeter')) return <SiApachejmeter />;
+    if (lower.includes('owasp')) return <SiOwasp />;
+    if (lower.includes('cmake')) return <SiCmake />;
+    if (lower.includes('mysql')) return <SiMysql />;
+    if (lower.includes('mongo')) return <SiMongodb />;
+    if (lower.includes('linux')) return <FaLinux />;
+    if (lower.includes('shell') || lower.includes('bash')) return <SiGnubash />;
+    if (lower.includes('typescript')) return <SiTypescript />;
+    if (lower.includes('python')) return <FaPython />;
+    if (lower.includes('c++')) return <SiCplusplus />;
+    if (lower.includes('golang') || lower.includes('go')) return <SiGo />;
+    if (lower.includes('git')) return <FaGitAlt />;
+    if (lower.includes('pytorch')) return <SiPytorch />;
+    if (lower.includes('tensorflow')) return <SiTensorflow />;
+    if (lower.includes('elk') || lower.includes('elastic')) return <SiElasticsearch />;
+    if (lower.includes('network') || lower.includes('istio')) return <FaNetworkWired />;
+    if (lower.includes('security') || lower.includes('sast') || lower.includes('dast')) return <FaShieldAlt />;
+    if (lower.includes('terminal')) return <FaTerminal />;
+    if (lower.includes('ai') || lower.includes('deep learning')) return <FaRobot />;
+
+    return <FaCode />; // Default icon
+};
 
 const ExperienceEntry: React.FC<{
     title: string;
@@ -72,22 +122,23 @@ const Home: React.FC = () => {
         }
     ];
 
-        const skills = [
-            'Nodejs','React','Angular','FastAPI','Docker','Kubernetes','Flux CD','GitHub Actions','Azure','AWS',
-            'Selenium','Playwright','Pytest','JMeter','OWASP ZAP','Restler','Make','CMake','Bazel','MySQL','MongoDB',
-            'Linux','Shell','Typescript','Python','C++','Golang','Rego','istio','cilium','SAST','DAST','OPA/Gatekeeper','Sigstore Cosign','Grype','Trivy','osv-scanner','Git','Deep Learning','Pytorch','TensorFlow','ELK'
-        ];
+    const skills = [
+        'TypeScript', 'Python', 'Golang', 'C++', 'Node.js', 'React', 'Angular',
+        'FastAPI', 'Docker', 'Kubernetes', 'FluxCD', 'GitHub Actions', 'Azure', 'AWS',
+        'Selenium', 'Playwright', 'JMeter', 'OWASP ZAP', 'Linux', 'Shell',
+        'MySQL', 'MongoDB', 'Istio', 'OPA/Gatekeeper', 'PyTorch', 'TensorFlow', 'ELK Stack'
+    ];
 
-        const [copied, setCopied] = React.useState<string | null>(null);
-        const handleCopy = async (skill: string) => {
-            try {
-                await navigator.clipboard.writeText(skill);
-                setCopied(skill);
-                setTimeout(() => setCopied(null), 1200);
-            } catch (e) {
-                // ignore
-            }
-        };
+    const [copied, setCopied] = React.useState<string | null>(null);
+    const handleCopy = async (skill: string) => {
+        try {
+            await navigator.clipboard.writeText(skill);
+            setCopied(skill);
+            setTimeout(() => setCopied(null), 1200);
+        } catch (e) {
+            // ignore
+        }
+    };
 
     return (
         <main className="container page-root">
@@ -95,7 +146,7 @@ const Home: React.FC = () => {
                 <div className="hero-inner">
                     <h1>Senior DevSecops Engineer</h1>
                     <p className="lead">
-                        Building resilient systems and secure CI/CD pipelines with the kind of precision  <i>Stark Lab</i> wishes it had. 
+                        Building resilient systems and secure CI/CD pipelines with the kind of precision  <i>Stark Lab</i> wishes it had.
                         Genius. Billionaire. Playboy. Philanthropist. Well, at least the two of them.
                     </p>
                     <div className="meta-row">
@@ -117,14 +168,15 @@ const Home: React.FC = () => {
 
             <section id="skills" className="section">
                 <h2 className="section-title">Skills</h2>
-                        <div className="skills-grid">
-                            {skills.map((s) => (
-                                <button key={s} type="button" className="skill-badge" onClick={() => handleCopy(s)}>
-                                    {s}
-                                    {copied === s && <span className="copied">Copied</span>}
-                                </button>
-                            ))}
-                        </div>
+                <div className="skills-grid">
+                    {skills.map((s) => (
+                        <button key={s} type="button" className="skill-badge" onClick={() => handleCopy(s)}>
+                            <span className="skill-icon">{getSkillIcon(s)}</span>
+                            {s}
+                            {copied === s && <span className="copied">Copied</span>}
+                        </button>
+                    ))}
+                </div>
             </section>
 
             <section id="contact" className="section contact">

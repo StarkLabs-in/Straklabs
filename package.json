@@ -1,0 +1,19 @@
+{
+  "name": "portfolio-template",
+  "version": "1.0.0",
+  "description": "A portfolio template project with a Node.js backend and a React.js frontend.",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run start --prefix backend\" \"npm run start --prefix frontend\"",
+    "build": "concurrently \"npm run build --prefix backend\" \"npm run build --prefix frontend\"",
+    "test": "concurrently \"npm run test --prefix backend\" \"npm run test --prefix frontend\""
+  },
+  "dependencies": {
+    "concurrently": "^6.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
