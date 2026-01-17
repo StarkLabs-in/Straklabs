@@ -2,7 +2,7 @@ import React from 'react';
 import useInView from '../hooks/useInView';
 import {
     FaNodeJs, FaReact, FaAngular, FaDocker, FaAws, FaPython,
-    FaLinux, FaGitAlt, FaDatabase, FaShieldAlt, FaTerminal,
+    FaLinux, FaGitAlt, FaShieldAlt, FaTerminal,
     FaNetworkWired, FaCode, FaRobot
 } from 'react-icons/fa';
 import {
